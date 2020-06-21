@@ -4,7 +4,7 @@
 
 This application implements various REST endpoints for Leave Management System.
 
-***Note: This is new application converted from plain hibernate project to spring data project. Securitization is yet to be implemented in this new project.***
+> Note: This is new application converted from plain hibernate project to spring data project. Securitization is yet to be implemented in this new project.
 
 ## How To Use
 
