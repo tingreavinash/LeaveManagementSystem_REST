@@ -11,4 +11,4 @@ This application implements various REST endpoints for Leave Management System.
 - The application is by default started on port 5555.
 - You can change the port in ***application.properties*** file.
 - Access the Swagger documentation on:
-`http://localhost:5555/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config`
+`http://localhost:5555/swagger-ui.html`
