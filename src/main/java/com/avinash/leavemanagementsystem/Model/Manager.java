@@ -1,106 +1,100 @@
 package com.avinash.leavemanagementsystem.Model;
 
+import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-import javax.persistence.Transient;
-import javax.validation.constraints.NotBlank;
-
 @Entity
-@Table(name="Manager")
+@Table(name = "Manager")
 public class Manager {
-	@Id
-	@Column(name="manager_ntnet")
-	@NotBlank(message = "This is mandatory parameter")
-	private String managerNtnet;
-	@Column(name="manager_name")
-	@NotBlank(message = "This is mandatory parameter")
-	private String managerName;
-	@Column(name="manager_email")
-	@NotBlank(message = "This is mandatory parameter")
-	private String managerEmail;
-	@Column(name="manager_designation")
-	@NotBlank(message = "This is mandatory parameter")
-	private String managerDesignation;
-	@Column(name="is_admin")
-	private String isAdmin;
-	
-	@Transient
-	@OneToMany (mappedBy = "manager", fetch = FetchType.EAGER)
-	private List<Employee> employee=new ArrayList<Employee>();
+    @Id
+    @Column(name = "manager_ntnet")
+    @NotBlank(message = "This is mandatory parameter")
+    private String managerNtnet;
+    @Column(name = "manager_name")
+    @NotBlank(message = "This is mandatory parameter")
+    private String managerName;
+    @Column(name = "manager_email")
+    @NotBlank(message = "This is mandatory parameter")
+    private String managerEmail;
+    @Column(name = "manager_designation")
+    @NotBlank(message = "This is mandatory parameter")
+    private String managerDesignation;
+    @Column(name = "is_admin")
+    private String isAdmin;
 
-	@Override
-	public String toString() {
-		return "Manager [managerNtnet=" + managerNtnet + ", managerName=" + managerName + ", managerEmail="
-				+ managerEmail + ", managerDesignation=" + managerDesignation + ", isAdmin=" + isAdmin + "]";
-	}
+    @Transient
+    @OneToMany(mappedBy = "manager", fetch = FetchType.EAGER)
+    private List<Employee> employee = new ArrayList<Employee>();
 
-	public String getManagerNtnet() {
-		return managerNtnet;
-	}
+    public Manager(String managerNtnet, String managerName, String managerEmail, String managerDesignation,
+                   String isAdmin, List<Employee> employee) {
+        super();
+        this.managerNtnet = managerNtnet;
+        this.managerName = managerName;
+        this.managerEmail = managerEmail;
+        this.managerDesignation = managerDesignation;
+        this.isAdmin = isAdmin;
+        this.employee = employee;
+    }
 
-	public void setManagerNtnet(String managerNtnet) {
-		this.managerNtnet = managerNtnet;
-	}
+    Manager() {
+    }
 
-	public String getManagerName() {
-		return managerName;
-	}
+    @Override
+    public String toString() {
+        return "Manager [managerNtnet=" + managerNtnet + ", managerName=" + managerName + ", managerEmail="
+                + managerEmail + ", managerDesignation=" + managerDesignation + ", isAdmin=" + isAdmin + "]";
+    }
 
-	public void setManagerName(String managerName) {
-		this.managerName = managerName;
-	}
+    public String getManagerNtnet() {
+        return managerNtnet;
+    }
 
-	public String getManagerEmail() {
-		return managerEmail;
-	}
+    public void setManagerNtnet(String managerNtnet) {
+        this.managerNtnet = managerNtnet;
+    }
 
-	public void setManagerEmail(String managerEmail) {
-		this.managerEmail = managerEmail;
-	}
+    public String getManagerName() {
+        return managerName;
+    }
 
-	public String getManagerDesignation() {
-		return managerDesignation;
-	}
+    public void setManagerName(String managerName) {
+        this.managerName = managerName;
+    }
 
-	public void setManagerDesignation(String managerDesignation) {
-		this.managerDesignation = managerDesignation;
-	}
+    public String getManagerEmail() {
+        return managerEmail;
+    }
 
-	public String getIsAdmin() {
-		return isAdmin;
-	}
+    public void setManagerEmail(String managerEmail) {
+        this.managerEmail = managerEmail;
+    }
 
-	public void setIsAdmin(String isAdmin) {
-		this.isAdmin = isAdmin;
-	}
+    public String getManagerDesignation() {
+        return managerDesignation;
+    }
 
-	public List<Employee> getEmployee() {
-		return employee;
-	}
+    public void setManagerDesignation(String managerDesignation) {
+        this.managerDesignation = managerDesignation;
+    }
 
-	public void setEmployee(List<Employee> employee) {
-		this.employee = employee;
-	}
+    public String getIsAdmin() {
+        return isAdmin;
+    }
 
-	public Manager(String managerNtnet, String managerName, String managerEmail, String managerDesignation,
-			String isAdmin, List<Employee> employee) {
-		super();
-		this.managerNtnet = managerNtnet;
-		this.managerName = managerName;
-		this.managerEmail = managerEmail;
-		this.managerDesignation = managerDesignation;
-		this.isAdmin = isAdmin;
-		this.employee = employee;
-	}
+    public void setIsAdmin(String isAdmin) {
+        this.isAdmin = isAdmin;
+    }
 
-	Manager(){}
-	
+    public List<Employee> getEmployee() {
+        return employee;
+    }
+
+    public void setEmployee(List<Employee> employee) {
+        this.employee = employee;
+    }
+
 
 }
